@@ -1,4 +1,0 @@
-9EgdjR9MceZE61n0
-before ? in string added chat_db -> name of db (by default - test)
-
-network acess -> ip access list -> add ip address -> allow acess from anywhere
