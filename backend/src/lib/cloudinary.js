@@ -2,6 +2,7 @@ import { v2 as cloudinary } from "cloudinary";
 
 import { config } from "dotenv";
 
+//sets up Cloudinary so backend can upload images using Cloudinary’s API.
 config();
 
 cloudinary.config({

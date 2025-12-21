@@ -109,6 +109,9 @@ export const logout = (req,res) =>{
 
 };
 
+//Updates the logged-in user’s profile picture by uploading it to Cloudinary and 
+// saving the image URL in MongoDB.
+
 export const updateProfile = async (req, res) => {
   try 
   {
@@ -136,6 +139,7 @@ export const updateProfile = async (req, res) => {
   }
 };
 
+// used to check authentication status
 export const checkAuth = (req, res) => {
   try 
   {
