@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv"
+import cookieParser from "cookie-parser";
 
 import authRoutes from "./routes/auth_route.js"
 import { connectDB } from "./lib/db.js";
@@ -10,6 +11,7 @@ dotenv.config();
 const PORT = process.env.PORT; //5001
 
 app.use(express.json())
+app.use(cookieParser());
 
 app.use("/api/auth",authRoutes) //mounts all routes inside that router file under the path /api/auth.
 
@@ -18,4 +20,4 @@ app.listen(PORT,()=>{
     
     connectDB();
     
-});
+}); 
