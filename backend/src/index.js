@@ -20,6 +20,10 @@ app.use(cors({
     credentials: true,
 }))
 
+app.use(express.json({ limit: "10mb" }));
+app.use(express.urlencoded({ extended: true, limit: "10mb" }));
+
+
 app.use("/api/auth",authRoutes) //mounts all routes inside that router file under the path /api/auth.
 
 app.use("/api/message",messageRoutes)

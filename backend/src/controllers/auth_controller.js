@@ -5,6 +5,7 @@ import bcrypt from "bcryptjs";
 import { generateToken } from "../lib/utils.js";
 import cloudinary from "../lib/cloudinary.js"
 
+
 export const signup = async (req,res) =>{
     const { fullName, email, password } = req.body;
 
@@ -19,8 +20,11 @@ export const signup = async (req,res) =>{
         }
 
         const user = await User.findOne({email});
-
-        if (user) return res.status(400).json({ message: "Email already exists" });
+       
+        if (user) 
+        {
+             return res.status(400).json({ message: "Email already exists" });
+        }
 
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(password, salt);
@@ -42,6 +46,7 @@ export const signup = async (req,res) =>{
                 fullName: newUser.fullName,
                 email: newUser.email,
                 profilePic: newUser.profilePic,
+                createdAt: newUser.createdAt,
             });
         }
         else
@@ -84,6 +89,7 @@ export const login = async (req, res) => {
             fullName: user.fullName,
             email: user.email,
             profilePic: user.profilePic,
+            createdAt: user.createdAt,
         });
     } 
     catch (error) 
