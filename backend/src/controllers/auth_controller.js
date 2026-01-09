@@ -64,7 +64,8 @@ export const signup = async (req,res) =>{
 };
 
 export const login = async (req, res) => {
-    
+   // console.log("LOGIN BODY KEYS:", Object.keys(req.body));
+
     const { email, password } = req.body;
     try 
     {
@@ -119,6 +120,7 @@ export const logout = (req,res) =>{
 // saving the image URL in MongoDB.
 
 export const updateProfile = async (req, res) => {
+
   try 
   {
     const { profilePic } = req.body;
