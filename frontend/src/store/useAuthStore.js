@@ -66,7 +66,13 @@ export const useAuthStore = create((set, get) => ({
     } 
     catch (error) 
     {
-      toast.error(error.response.data.message);
+      //toast.error(error.response.data.message);
+        const message =
+    error.response?.data?.message ||
+    error.message ||
+    "Something went wrong";
+
+  toast.error(message);
     } 
     finally 
     {
@@ -111,5 +117,7 @@ export const useAuthStore = create((set, get) => ({
       set({ isUpdatingProfile: false });
     }
   },
+
+  connectSocket: () => {}, 
   
 }));
