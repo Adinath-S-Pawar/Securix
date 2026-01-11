@@ -68,11 +68,11 @@ export const useAuthStore = create((set, get) => ({
     {
       //toast.error(error.response.data.message);
         const message =
-    error.response?.data?.message ||
-    error.message ||
-    "Something went wrong";
+        error.response?.data?.message ||
+        error.message ||
+        "Something went wrong";
 
-  toast.error(message);
+        toast.error(message);
     } 
     finally 
     {

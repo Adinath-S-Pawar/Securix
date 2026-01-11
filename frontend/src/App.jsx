@@ -9,6 +9,7 @@ import SettingsPage from "./pages/SettingsPage"
 import SignupPage from "./pages/SignupPage"
 
 import { useAuthStore } from "./store/useAuthStore";
+import { useThemeStore } from './store/useThemeStore'
 
 import {Loader} from "lucide-react"
 import {Toaster} from "react-hot-toast"
@@ -16,6 +17,7 @@ import {Toaster} from "react-hot-toast"
 const App = () => {
 
   const {authUser, checkAuth, isCheckingAuth}= useAuthStore()
+  const {theme} = useThemeStore()
 
   //Determines login state before routing
   useEffect( ()=>{
@@ -35,7 +37,7 @@ const App = () => {
   }
   
   return (
-    <div>
+    <div data-theme = {theme}>
         <Navbar></Navbar>
 
         <Routes>
