@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" }));
 
 app.use("/api/auth",authRoutes) //mounts all routes inside that router file under the path /api/auth.
 
-app.use("/api/message",messageRoutes)
+app.use("/api/messages",messageRoutes)
 
 app.listen(PORT,()=>{
     console.log('Server running on port '+PORT);
