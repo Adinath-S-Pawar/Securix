@@ -1,4 +1,6 @@
 import User from "../models/user_model.js";
+import Message from "../models/message_model.js";
+import cloudinary from "../lib/cloudinary.js";
 
 //fetch all users except the currently logged-in user,to show in the chat sidebar
 export const getUsersForSidebar = async (req, res) => {
