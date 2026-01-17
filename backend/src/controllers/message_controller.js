@@ -1,6 +1,7 @@
 import User from "../models/user_model.js";
 import Message from "../models/message_model.js";
 import cloudinary from "../lib/cloudinary.js";
+import { getReceiverSocketId, io } from "../lib/socket.js";
 
 //fetch all users except the currently logged-in user,to show in the chat sidebar
 export const getUsersForSidebar = async (req, res) => {
@@ -46,6 +47,12 @@ export const sendMessage = async (req, res) => {
     const senderId = req.user._id;
 
     let imageUrl;
+
+    if (image && image.length > 5 * 1024 * 1024) 
+    {
+      return res.status(400).json({ message: "Image too large" });
+    }
+
     if (image) {
       // Upload base64 image to cloudinary
       const uploadResponse = await cloudinary.uploader.upload(image);
@@ -69,6 +76,6 @@ export const sendMessage = async (req, res) => {
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller: ", error.message);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).json({ error: "message failed to send" });
   }
 };
