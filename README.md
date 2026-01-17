@@ -127,6 +127,7 @@ README.md
 Clone the repository
 
 git clone [https://github.com/Adinath-S-Pawar/Securix.git](https://github.com/Adinath-S-Pawar/Securix.git)
+
 cd Securix
 
 Install dependencies
