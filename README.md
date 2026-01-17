@@ -2,8 +2,8 @@
 
 Securix is a full-stack real-time chat application that enables secure and seamless communication between users. It features authentication, persistent sessions, real-time messaging using WebSockets, media sharing, and theme customization. The project is built using the MERN stack and deployed on Render.
 
-**Live Demo:** [https://securix-oxpj.onrender.com](https://securix-oxpj.onrender.com)
-**GitHub Repository:** [https://github.com/Adinath-S-Pawar/Securix](https://github.com/Adinath-S-Pawar/Securix)
+Live Demo: [https://securix-oxpj.onrender.com](https://securix-oxpj.onrender.com)
+GitHub Repository: [https://github.com/Adinath-S-Pawar/Securix](https://github.com/Adinath-S-Pawar/Securix)
 
 ---
 
@@ -66,19 +66,19 @@ Securix is a full-stack real-time chat application that enables secure and seaml
 Securix
 backend
 └── src
-├── controllers
-├── models
-├── routes
-├── lib
-└── index.js
+  ├── controllers
+  ├── models
+  ├── routes
+  ├── lib
+  └── index.js
 
 frontend
 └── src
-├── components
-├── pages
-├── store
-├── utils
-└── App.jsx
+  ├── components
+  ├── pages
+  ├── store
+  ├── utils
+  └── App.jsx
 
 README.md
 
@@ -129,15 +129,19 @@ Clone the repository
 git clone [https://github.com/Adinath-S-Pawar/Securix.git](https://github.com/Adinath-S-Pawar/Securix.git)
 cd Securix
 
-Install dependencies and run locally
+Install dependencies
 
 npm install
+
+Run the project
+
 npm run dev
+
 ---
 
 ## 👤 Author
 
-**Adinath Pawar**
+Adinath Pawar
 GitHub: [https://github.com/Adinath-S-Pawar](https://github.com/Adinath-S-Pawar)
 
 ---
