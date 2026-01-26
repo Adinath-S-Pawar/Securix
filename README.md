@@ -59,6 +59,14 @@ GitHub Repository: [https://github.com/Adinath-S-Pawar/Securix](https://github.c
 * Cloudinary manages image uploads
 * Zustand manages global frontend state
 
+  ```mermaid
+graph TD
+  A[React Frontend] -->|REST API| B[Express Backend]
+  B --> C[MongoDB Atlas]
+  B --> D[Socket.IO Server]
+  D --> A
+  B --> E[Cloudinary Image Storage]
+
 ---
 
 ## 📂 Project Structure
@@ -95,6 +103,20 @@ README.md
 4. Receiver instantly receives the message without refreshing
 
 ---
+sequenceDiagram
+  participant S as Sender
+  participant F as Frontend
+  participant B as Backend
+  participant DB as MongoDB
+  participant R as Receiver
+
+  S->>F: Send Message
+  F->>B: POST /api/messages/send
+  B->>DB: Store message
+  DB-->>B: Saved message
+  B->>R: Emit newMessage via Socket.IO
+  R-->>F: Display incoming message instantly
+
 
 ## 🎨 Theme Management
 
@@ -112,6 +134,21 @@ README.md
 4. User session persists across refresh
 
 ---
+
+sequenceDiagram
+  participant U as User
+  participant F as Frontend
+  participant B as Backend
+  participant DB as MongoDB
+
+  U->>F: Enter login credentials
+  F->>B: POST /api/auth/login
+  B->>DB: Validate user & password
+  DB-->>B: User data
+  B-->>F: JWT in HTTP-only cookie
+  F->>B: GET /api/auth/check
+  B-->>F: Authenticated user data
+
 
 ## 📸 Image Sharing
 
